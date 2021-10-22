@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fire from './config/fire'
 import Login from './Login.js';
 import Home from './Home.js';
+import note from './note.png';
 
 class App extends Component {
 
@@ -31,7 +32,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { this.state.user ? ( <Home /> ) : ( <Login /> ) }
+        <div className="container" id="about">
+          <div className="row align-items-center">
+            <div className="col headline"> <br />
+            <h1 className="title">Sticky<span class="point">📝</span></h1>
+            <h3 className="description"><em>Share your thoughts with others.</em></h3>
+            <img src={note} className="image" height={250}  width={250}/>
+            <br />
+            { this.state.user ? ( <Home /> ) : ( <Login /> ) }
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
