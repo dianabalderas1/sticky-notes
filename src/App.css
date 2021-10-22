@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+    
+body {
+    background-color: white;
+    text-align: center;
+}
+    
+.title {
+    color: black;
+    font-style: bold;
+    font-size: 400%;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+}
+    
+.description {
+    font-size: 130%;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    color: black;
+}
+    
+.point {
+    font-size: 50%;
+}
+    
+.question {
+    font-size: 150%;
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    color: black;
+}
+    
+.mission {
+    text-align: left;
+    font-family: "Lato", sans-serif;
+    color: black;
+}
+    
+.image {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
