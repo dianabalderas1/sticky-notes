@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import fire from './config/fire'
 import Login from './Login.js';
 import Home from './Home.js';
-import Header from './components/Header';
 
 class App extends Component {
 
@@ -33,7 +32,6 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container" id="about">
-          <Header />
           { this.state.user ? ( <Home /> ) : ( <Login /> ) }
         </div>
       </div>

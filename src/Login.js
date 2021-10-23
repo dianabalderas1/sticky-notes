@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './components/Header';
 import fire from './config/fire';
 
 class Login extends React.Component {
@@ -31,6 +32,7 @@ class Login extends React.Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <div>
+          <Header />
           <div>Email</div>
           <input id="email" placeholder="Enter Email.." type="text"/>
         </div>
