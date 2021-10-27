@@ -35,7 +35,10 @@ class Home extends React.Component {
 
         <Draggable>
         <div className="box">
-            <div>Move me around!</div>
+            <div>
+            <h2>Title</h2>
+            <p>Move me around!</p>
+            </div>
         </div>
      </Draggable>
 

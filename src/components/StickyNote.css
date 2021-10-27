@@ -1,0 +1,20 @@
+.box{
+    text-decoration:none;
+    color:#000;
+    background:rgb(184, 221, 255);
+    display:block;
+    height:10em;
+    width:10em;
+    padding: 1em;
+    /*color*/
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: normal;
+}
