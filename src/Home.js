@@ -34,16 +34,10 @@ class Home extends React.Component {
         <button onClick = {this.logout}>Logout</button>
 
         <Draggable>
-        <div className="box">
             <div>
-            <h2>Title</h2>
-            <p>Move me around!</p>
+            <textarea>Edit text and move me around!</textarea>
             </div>
-        </div>
-     </Draggable>
-
-  
-
+      </Draggable> 
       </div>
     )
   }

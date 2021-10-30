@@ -7,12 +7,10 @@ class StickyNote extends React.Component {
 
   render() {
     return (
-        <div>
-        <Draggable>
-        <div className="box">
-        </div>
-    </Draggable>
-    </div>
+      <div>
+      <Draggable>
+      </Draggable>
+      </div>
     )
   }
 }
