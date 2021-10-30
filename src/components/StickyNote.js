@@ -10,6 +10,7 @@ class StickyNote extends React.Component {
         <div>
         <Draggable>
         <div className="box">
+            <div>Move me around!</div>
         </div>
     </Draggable>
     </div>
