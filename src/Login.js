@@ -32,16 +32,20 @@ class Login extends React.Component {
     return (
       <div style={{ textAlign: 'center' }}>
         <div>
-          <Header />
-          <div>Email</div>
-          <input id="email" placeholder="Enter Email.." type="text"/>
+         <Header />
+          <div className="email"><em>Email</em></div>
+          <input id="email" placeholder="Enter Email..." type="text"/>
         </div>
         <div>
-          <div>Password</div>
-          <input id="password" placeholder="Enter Password.." type="text"/>
+          <div className="password"><em>Password</em></div>
+          <input id="password" placeholder="Enter Password..." type="text"/>
         </div>
-        <button style={{margin: '10px'}} onClick={this.login}>Login</button>
-        <button style={{margin: '10px'}} onClick={this.signUp}>Sign Up</button>
+        <br />
+        <button onClick={this.login}  className="button">Login</button>
+        <button onClick={this.signUp} className="button2">Sign Up</button>
+        <br />
+        <br />
+        <footer className="footer">Made with <i className="icon ion-heart" style={{color: "#e25555"}}></i> in Bakersfield</footer>
       </div>
     )
   }
