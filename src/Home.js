@@ -4,7 +4,17 @@ import fire from './config/fire';
 import StickyNote from './components/StickyNote';
 import Draggable from 'react-draggable';
 
+//accessing realTime DB
+const db = fire.database();
+
+ //creating the reference to the collection 
+const notesRef = db.ref("Sticky");
+const  newNote = notesRef.push();
+
 class Home extends React.Component {
+   
+ 
+   
 
   state = {
     showSticky: false
@@ -24,18 +34,27 @@ class Home extends React.Component {
     return (<StickyNote />);
   }
 
+  onSubmit = () => {
+    this.setState({showSticky: true});
+    console.log("Success");
+    return (<StickyNote />);
+  }
+  
 
   render() {
     return (
-      <div style={{textAlign: 'center'}}>
+      <div 
+       >
         {/* <h1>You are Logged In</h1> */}
         <Header />
         <button onClick = {this.state.showSticky ? null : this.createSticky}>createStickyNote</button>
         <button onClick = {this.logout}>Logout</button>
-
         <Draggable>
             <div>
-            <textarea>Edit text and move me around!</textarea>
+              <textarea>
+              Edit text and move me around!
+              </textarea>
+              <button>Submit</button>
             </div>
       </Draggable> 
       </div>
