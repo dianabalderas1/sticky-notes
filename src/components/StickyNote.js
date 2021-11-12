@@ -10,22 +10,6 @@ let db = fire.database();
 //creating the reference to the collection 
 const notesRef = db.ref("Sticky");
 
-// const  newNote = notesRef.push();
-
-// //retrieve data from database 
-// const retrieveData = () => {
-//     notesRef.on('value', (snapshot) => {
-//         let stickyList = [];
-//         snapshot.forEach((data) => {
-//             stickyList.push(data.val());
-//         });
-//         // console.log(stickyList); 
-//         return stickyList;
-//     }, (errorObject) => {
-//         console.log('The read failed: ' + errorObject.name);
-//     });
-// }
-
 //add function will push to RealTime DB
 const add = () => {
     const newPostKey = notesRef?.push().key;
@@ -39,8 +23,8 @@ const add = () => {
     });
 };
 
- const update = (key, item) => db?.update({ [key]: item });
- const remove = (key) => db?.child(key).remove();
+//  const update = (key, item) => db?.update({ [key]: item });
+//  const remove = (key) => db?.child(key).remove();
 
 
 class StickyNote extends React.Component {
@@ -55,11 +39,9 @@ class StickyNote extends React.Component {
 
     retrieveData = (stickyList) => {
         notesRef.on('value', (snapshot) => {
-            // let stickyList = [];
             snapshot.forEach((data) => {
                 stickyList.push(data.val());
             });
-            //  console.log(stickyList); 
             return stickyList;
         }, (errorObject) => {
             console.log('The read failed: ' + errorObject.name);
@@ -82,16 +64,6 @@ class StickyNote extends React.Component {
         
         );
     }
-
-            // <div className="noteText">
-            //     <button id="delete" >x
-            //     {this.stickyList}</button>
-            //     <textarea className="EditableText" name="textEntry"></textarea>
-            // </div>
-
-
-        
-    
 }
 
 export default StickyNote;
