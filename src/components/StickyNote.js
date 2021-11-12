@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import './StickyNote.css';
 import fire from '../config/fire';
+import { Rnd } from 'react-rnd';
 
 
 //accessing realTime DB
@@ -50,18 +51,23 @@ class StickyNote extends React.Component {
 
     render() {
         return this.stickyList.map((note) => 
-      
+      <Rnd>
         <div class = "noteText"
         style={{
+            position: 'absolute', 
             left: note.x + "px",
             top: note.y + "px"
           }}
         >
             <button class = "delete">x</button>
+            <textarea style={{
+            backgroundColor: 'transparent'
+          }}>
             {note.t}
+            </textarea>
 
         </div>
-        
+        </Rnd>
         );
     }
 }
