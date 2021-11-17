@@ -8,6 +8,7 @@ import { Rnd } from 'react-rnd';
 //accessing realTime DB
 let db = fire.database();
 
+
 //creating the reference to the collection 
 const notesRef = db.ref("Sticky");
 
@@ -60,9 +61,7 @@ class StickyNote extends React.Component {
           }}
         >
             <button class = "delete">x</button>
-            <textarea style={{
-            backgroundColor: 'transparent'
-          }}>
+            <textarea>
             {note.t}
             </textarea>
 

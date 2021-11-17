@@ -24,10 +24,11 @@
     position: relative;
     float: right;
     color: red;
-    top: auto;
+    top: 10 px;
+    left: 10 px;
   }
 
-  .EditableText {
+  textarea {
     min-width: 80px;
     min-height: 80px;
     margin-top: 12px;

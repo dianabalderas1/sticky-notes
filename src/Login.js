@@ -2,7 +2,9 @@ import React from 'react';
 import Header from './components/Header';
 import fire from './config/fire';
 
+
 class Login extends React.Component {
+
 
   signUp() {
     const email = document.querySelector('#email').value;
@@ -27,21 +29,41 @@ class Login extends React.Component {
         console.log('Error: ' + err.toString());
       })
   }
+  state = { showing: true };
 
   render() {
+    const { showing } = this.state;
     return (
       <div style={{ textAlign: 'center' }}>
         <div>
           <Header />
+          {showing
+            ? <div>
+              <div>Name</div>
+              <input id="name" placeholder="Enter Name.." type="text" />
+            </div>
+            : null
+          }
           <div>Email</div>
-          <input id="email" placeholder="Enter Email.." type="text"/>
+          <input id="email" placeholder="Enter Email.." type="text" />
         </div>
         <div>
           <div>Password</div>
-          <input id="password" placeholder="Enter Password.." type="text"/>
+          <input id="password" placeholder="Enter Password.." type="text" />
         </div>
-        <button style={{margin: '10px'}} onClick={this.login}>Login</button>
-        <button style={{margin: '10px'}} onClick={this.signUp}>Sign Up</button>
+        {showing
+          ? null
+          : <button style={{ margin: '10px' }} onClick={this.login}>Login</button>
+        }
+        {showing ? <button onClick={() => this.setState({ showing: !showing })}>Return to Login Account</button>
+          : <button onClick={() => this.setState({ showing: !showing })}>Create Account</button>
+        }
+        {showing
+          ? <div>
+            <button style={{ margin: '10px' }} onClick={this.signUp}>Sign Up</button>
+          </div>
+          : null
+        }
       </div>
     )
   }
