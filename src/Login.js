@@ -9,10 +9,18 @@ class Login extends React.Component {
   signUp() {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
+    
+
     fire.auth().createUserWithEmailAndPassword(email, password)
       .then((u) => {
+        fire.database().ref("Users").push({
+          name: document.querySelector('#name').value,
+          userID: fire.auth().currentUser.uid
+        })
         console.log('Successfully Signed Up');
-      })
+
+      }
+      )
       .catch((err) => {
         console.log('Error: ' + err.toString());
       })
@@ -29,7 +37,7 @@ class Login extends React.Component {
         console.log('Error: ' + err.toString());
       })
   }
-  state = { showing: true };
+  state = { showing: false };
 
   render() {
     const { showing } = this.state;
@@ -55,7 +63,7 @@ class Login extends React.Component {
           ? null
           : <button style={{ margin: '10px' }} onClick={this.login}>Login</button>
         }
-        {showing ? <button onClick={() => this.setState({ showing: !showing })}>Return to Login Account</button>
+        {showing ? <button onClick={() => this.setState({ showing: !showing })}>Return to Login</button>
           : <button onClick={() => this.setState({ showing: !showing })}>Create Account</button>
         }
         {showing
