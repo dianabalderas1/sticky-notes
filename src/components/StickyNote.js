@@ -8,22 +8,31 @@ import { Rnd } from 'react-rnd';
 //accessing realTime DB
 let db = fire.database();
 
+
 //creating the reference to the collection 
 const notesRef = db.ref("Sticky");
 
 //add function will push to RealTime DB
-const add = () => {
-    const newPostKey = notesRef?.push().key;
-    notesRef?.update({
-        [newPostKey]: {
-            t: "First Note",
-            x: window.scrollX + Math.floor(Math.random() * (200 - 80) + 80),
-            y: window.scrollY + Math.floor(Math.random() * (200 - 80) + 80),
-            c: 5,
-        },
-    });
-};
+// const add = () => {
+//     const newPostKey = notesRef?.push().key;
+//     notesRef?.update({
+//         [newPostKey]: {
+//             t: "First Note",
+//             x: window.scrollX + Math.floor(Math.random() * (200 - 80) + 80),
+//           y: window.scrollY + Math.floor(Math.random() * (200 - 80) + 80),
+//             c: fire.auth().currentUser.uid,
+//         },
+//     });
+// };
 
+const add = () => {
+    fire.database().ref("Sticky").push({
+        text: "Note Text",
+        x: window.scrollX + Math.floor(Math.random() * (200 - 80) + 80),
+        y: window.scrollY + Math.floor(Math.random() * (200 - 80) + 80),
+        userID: fire.auth().currentUser.uid
+})
+};
 //  const update = (key, item) => db?.update({ [key]: item });
 //  const remove = (key) => db?.child(key).remove();
 
@@ -35,6 +44,7 @@ class StickyNote extends React.Component {
         super(props);
         this.retrieveData(this.stickyList);
         console.log(this.stickyList);
+
 
     }
     stickyList = [];
@@ -61,9 +71,7 @@ class StickyNote extends React.Component {
           }}
         >
             <button class = "delete">x</button>
-            <textarea style={{
-            backgroundColor: 'transparent'
-          }}>
+            <textarea>
             {note.t}
             </textarea>
 

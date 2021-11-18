@@ -31,8 +31,6 @@ class Home extends React.Component {
             <button onClick={add}>createStickyNote</button> 
             <button onClick={this.logout}>Logout</button>
             <Header />
-            
-             
             <StickyNote />
           </div>
 
