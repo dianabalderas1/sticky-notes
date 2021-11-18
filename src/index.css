@@ -47,3 +47,58 @@ body {
     margin: auto;
 }
 
+.button {
+  background-color: black;
+  font-family: "Lato", sans-serif;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.email {
+  font-family: "Lato", sans-serif;
+  color: black;
+}
+
+.password {
+  font-family: "Lato", sans-serif;
+  color: black;
+}
+
+#email {
+  font-family: "Lato", sans-serif;
+  color: black;
+}
+
+#password {
+  font-family: "Lato", sans-serif;
+  color: black;
+}
+
+.button2 {
+  background-color: black;
+  font-family: "Lato", sans-serif;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.footer {
+    color: black;
+    font-style: bold;
+    font-size: 90%;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+}

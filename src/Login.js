@@ -72,6 +72,7 @@ class Login extends React.Component {
           </div>
           : null
         }
+        <footer className="footer">Made with <i className="icon ion-heart" style={{color: "#e25555"}}></i> in Bakersfield</footer>
       </div>
     )
   }
