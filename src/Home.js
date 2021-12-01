@@ -28,9 +28,9 @@ class Home extends React.Component {
         <div>
           <div>
             {/* <h1>You are Logged In</h1> */}
-            <button onClick={add}>createStickyNote</button>
-            <button onClick={removeSticky}>delete StickyNote</button>  
-            <button onClick={this.logout}>Logout</button>
+            <button className="button" onClick={add}>createStickyNote</button>
+            <button className="button" onClick={removeSticky}>delete StickyNote</button>  
+            <button className="button" onClick={this.logout}>Logout</button>
             <Header />
             <StickyNote />
           </div>
