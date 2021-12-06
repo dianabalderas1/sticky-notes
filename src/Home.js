@@ -24,16 +24,18 @@ class Home extends React.Component {
 
   render() {
     return (
+      <>
         <div>
           <div>
             {/* <h1>You are Logged In</h1> */}
-            <button className="button" onClick={add}>createStickyNote</button>  
+            <button className="button" onClick={add}>createStickyNote</button>
+            <button className="button" onClick={removeSticky}>delete StickyNote</button>  
             <button className="button" onClick={this.logout}>Logout</button>
             <Header />
             <StickyNote />
           </div>
 
-        </div>
+        </div></>
     )
   }
 }
