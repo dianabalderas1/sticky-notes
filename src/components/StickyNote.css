@@ -40,3 +40,15 @@
     background: transparent;
     overflow: hidden;
   }
+  .note {
+    min-width: 80px;
+    min-height: 80px;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.92rem;
+    line-height: 1rem;
+    font-family: "M PLUS Rounded 1c";
+    background: transparent;
+    overflow: hidden;
+  }
