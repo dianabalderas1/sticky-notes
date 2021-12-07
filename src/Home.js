@@ -27,7 +27,9 @@ class Home extends React.Component {
         <div>
           <div>
             {/* <h1>You are Logged In</h1> */}
-            <button className="button" onClick={add}>createStickyNote</button>  
+            {/* <button className="button" value="-MqL1DBJWOmXweCU7yvA" onClick={e => removeSticky(e.target.value)}>createStickyNote</button>   */}
+            <button className="button" value="-MqL1DBJWOmXweCU7yvA" onClick={add}>createStickyNote</button>  
+
             <button className="button" onClick={this.logout}>Logout</button>
             <Header />
             <StickyNote />
